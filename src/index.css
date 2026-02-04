@@ -1,0 +1,15 @@
+.icon-blue{
+    color:rgb(80, 80, 178);
+}
+
+.icon-blue:hover{
+    color:rgb(224, 224, 229);
+}
+
+.icon-red{
+    color:rgb(177, 67, 67)
+}
+
+.icon-red:hover{
+    color:rgb(201, 164, 164)
+}
