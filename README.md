@@ -1,16 +1,109 @@
-# React + Vite
+# 📝 To-Do App (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and interactive **To-Do application built with React**.
+This app allows users to **add, edit, delete, and mark tasks as completed** using a clean Bootstrap-based UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- ➕ Add new to-do items  
+- ✏️ Edit existing items  
+- 💾 Save updated items  
+- 🗑️ Delete items  
+- ✅ Mark items as completed  
+- 🔄 Toggle between **Add** and **Edit (Save)** modes  
+- 📱 Responsive UI using Bootstrap  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Built With
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React (Functional Components & Hooks)
+- Bootstrap 5
+- Bootstrap Icons
+- CSS
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+│
+├── components/
+│   ├── Header.jsx
+│   └── Content.jsx
+│
+├── App.js
+├── index.js
+└── index.css
+```
+
+---
+
+## ⚙️ How It Works
+
+- State is managed in the **Content** component.
+- The **Header** component receives state and handlers via props.
+- Clicking **Edit** fills the input and switches the button to **Save**.
+- Saving updates the item and resets the form.
+
+---
+
+## ▶️ Getting Started
+
+### Clone the repository
+```bash
+git clone https://github.com/your-username/todo-app.git
+```
+
+### Install dependencies
+```bash
+npm install
+```
+
+### Run the app
+```bash
+npm start
+```
+
+The app runs at `http://localhost:3000`
+
+---
+
+## 🧪 Example To-Do Item
+
+```js
+{
+  id: 1,
+  label: "Learn React",
+  checked: false
+}
+```
+
+---
+
+## 🧠 Concepts Practiced
+
+- React Hooks (`useState`)
+- Props and state management
+- Conditional rendering
+- Array updates with `map` and `filter`
+- Controlled components
+
+---
+
+## ✨ Future Improvements
+
+- LocalStorage persistence
+- Task priorities
+- Due dates
+- Animations
+
+---
+
+## 👩‍💻 Author
+
+**Rampriya Karthick**
+Frontend Developer
