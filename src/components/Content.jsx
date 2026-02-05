@@ -9,8 +9,9 @@ const Content = () => {
         {id:2,label:"JavaScript",checked:true},
         {id:3,label:"React",checked:false}
     ])
-
+let [newItem, setNewItem] = useState("")
     let [isEditing,setIsEditing] = useState(false)
+    let[editingItem, setEditingItem] = useState(null)
     
 
 
@@ -27,8 +28,11 @@ setItems(newListItems)
     }
 
 
-let handleUpdate =()=>{
+let handleUpdate =(id)=>{
+    let listItem = items.find(item => item.id === id)
     setIsEditing(true)
+    setEditingItem(id)
+    setNewItem(listItem.label)
 }
 
 let handleDelete =(id)=>{
@@ -42,7 +46,7 @@ let handleDelete =(id)=>{
 }
   return (
     <main>
-    <Header isEditing={isEditing} setIsEditing={setIsEditing}/>
+    <Header isEditing={isEditing} setIsEditing={setIsEditing} setItems={setItems} items={items} newItem={newItem} setNewItem={setNewItem} editingItem={editingItem} setEditingItem={setEditingItem} />
     <ul className="list-group">
     {
         items.map((item) => {
@@ -54,7 +58,7 @@ let handleDelete =(id)=>{
   </label>
 </div>
             <span className="d-flex align-items-center gap-2">
-            <i className="bi bi-pencil-square icon-blue" tabIndex={0} onClick={handleUpdate}>Edit</i>
+            <i className="bi bi-pencil-square icon-blue" tabIndex={0} onClick={()=>{handleUpdate(item.id)}}>Edit</i>
             <i className="bi bi-trash3 me-2 icon-red" tabIndex={0} onClick={()=>{handleDelete(item.id)}}>Delete</i>
             </span>
             

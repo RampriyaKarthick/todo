@@ -1,10 +1,38 @@
 import React , {useState} from 'react'
 
 
-const Header= ({isEditing = false, setIsEditing}) => {
-  let [newItem, setNewItem] = useState("")
+const Header= ({isEditing = false, setIsEditing,items, setItems, newItem, setNewItem, editingItem, setEditingItem}) => {
+  
 
- 
+ let handleAddorSaveItem =(e)=>{
+  e.preventDefault()
+  if(isEditing){
+    let newListItems = items.map((item)=>{
+      if(item.id === editingItem){
+        return {...item, label:newItem}
+      }
+      return item
+    })
+    setItems(newListItems) 
+    setNewItem("")
+    setIsEditing(false)
+
+  }
+
+  
+  
+  else{
+     setItems([
+      ...items,
+      {id:items.length+1,label:newItem, checked:false}
+    ])
+    setNewItem("")
+    setEditingItem(null)
+  }
+}
+
+   
+// setIsEditing(false)
 
 
   return (
@@ -14,12 +42,12 @@ const Header= ({isEditing = false, setIsEditing}) => {
     <a className="navbar-brand">To-do</a>
     <form className="d-flex">
       <input className="form-control me-2" type="search" value={newItem} placeholder='Add new Item' onChange={(e)=>{setNewItem(e.target.value)}}/>
-      <button className="btn btn-outline-success" type="submit" >{isEditing? "Save" :"Add"}</button>
+      <button className="btn btn-outline-success" type="submit" onClick={handleAddorSaveItem} >{isEditing? "Save" :"Add"}</button>
     </form>
   </div>
 </nav>
    
   )
 }
-
+ 
 export default Header
