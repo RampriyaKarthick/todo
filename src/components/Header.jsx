@@ -1,14 +1,20 @@
-import React from 'react'
+import React , {useState} from 'react'
 
-const Header= () => {
+
+const Header= ({isEditing = false, setIsEditing}) => {
+  let [newItem, setNewItem] = useState("")
+
+ 
+
+
   return (
    
   <nav className="navbar navbar-light bg-light">
   <div className="container-fluid">
     <a className="navbar-brand">To-do</a>
     <form className="d-flex">
-      <input className="form-control me-2" type="search" placeholder="Enter the task" aria-label="Search"/>
-      <button className="btn btn-outline-success" type="submit">Add to List</button>
+      <input className="form-control me-2" type="search" value={newItem} placeholder='Add new Item' onChange={(e)=>{setNewItem(e.target.value)}}/>
+      <button className="btn btn-outline-success" type="submit" >{isEditing? "Save" :"Add"}</button>
     </form>
   </div>
 </nav>
