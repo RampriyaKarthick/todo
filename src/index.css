@@ -1,15 +1,35 @@
-.icon-blue{
+.icon-blue {
     color:rgb(80, 80, 178);
+     cursor: pointer;
 }
 
-.icon-blue:hover{
-    color:rgb(224, 224, 229);
+.icon-blue :hover{
+    color:rgb(164, 37, 143);
 }
 
 .icon-red{
-    color:rgb(177, 67, 67)
+    color:rgb(177, 67, 67);
+     cursor: pointer;
 }
 
 .icon-red:hover{
+    color:rgb(201, 164, 164)
+}
+
+.icon-green{
+    color:rgb(67, 177, 67);
+     cursor: pointer;
+}
+
+.icon-green:hover{
+    color:rgb(164, 201, 164)
+}
+
+.icon-orange{
+    color:rgb(177, 106, 67);
+     cursor: pointer;
+}
+
+.icon-orange:hover{
     color:rgb(201, 164, 164)
 }

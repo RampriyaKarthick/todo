@@ -58,8 +58,8 @@ let handleDelete =(id)=>{
   </label>
 </div>
             <span className="d-flex align-items-center gap-2">
-            <i className="bi bi-pencil-square icon-blue" tabIndex={0} onClick={()=>{handleUpdate(item.id)}}>Edit</i>
-            <i className="bi bi-trash3 me-2 icon-red" tabIndex={0} onClick={()=>{handleDelete(item.id)}}>Delete</i>
+            <i className="bi bi-pencil-square icon-blue" tabIndex={0} onClick={()=>{handleUpdate(item.id)}}></i>
+            <i className="bi bi-trash3 me-2 icon-red" tabIndex={0} onClick={()=>{handleDelete(item.id)}}></i>
             </span>
             
             

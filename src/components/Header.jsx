@@ -16,6 +16,8 @@ const Header= ({isEditing = false, setIsEditing,items, setItems, newItem, setNew
     setItems(newListItems) 
     setNewItem("")
     setIsEditing(false)
+    setEditingItem(null)
+    
 
   }
 
@@ -42,7 +44,9 @@ const Header= ({isEditing = false, setIsEditing,items, setItems, newItem, setNew
     <a className="navbar-brand">To-do</a>
     <form className="d-flex">
       <input className="form-control me-2" type="search" value={newItem} placeholder='Add new Item' onChange={(e)=>{setNewItem(e.target.value)}}/>
-      <button className="btn btn-outline-success" type="submit" onClick={handleAddorSaveItem} >{isEditing? "Save" :"Add"}</button>
+      <button className="btn btn-outline-success" type="submit" onClick={handleAddorSaveItem} >
+      {isEditing? <i className="bi bi-bookmark-check icon-orange"></i> :<i className="bi bi-plus-circle-fill icon-green"></i>}</button>
+      
     </form>
   </div>
 </nav>
